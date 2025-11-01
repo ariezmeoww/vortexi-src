@@ -1,25 +1,9 @@
-                                                                   
-                                                                   
-$$\    $$\                      $$\                         $$\ 
-$$ |   $$ |                     $$ |                        \__|
-$$ |   $$ | $$$$$$\   $$$$$$\ $$$$$$\    $$$$$$\  $$\   $$\ $$\ 
-\$$\  $$  |$$  __$$\ $$  __$$\\_$$  _|  $$  __$$\ \$$\ $$  |$$ |
- \$$\$$  / $$ /  $$ |$$ |  \__| $$ |    $$$$$$$$ | \$$$$  / $$ |
-  \$$$  /  $$ |  $$ |$$ |       $$ |$$\ $$   ____| $$  $$<  $$ |
-   \$  /   \$$$$$$  |$$ |       \$$$$  |\$$$$$$$\ $$  /\$$\ $$ |
-    \_/     \______/ \__|        \____/  \_______|\__/  \__|\__|
-                                                                
+# Vortexi Source Code
 
-RIP Vortexi. Made with ♥ by Kuromi & Ariez.
+This is the original Vortexi source code (not vortexi.us)
 
-This is the full Vortexi source except for some API keys and other sensitive info.
+This was made with love by me.
 
-Gameserver is pretty easy to setup. I'll let you figure that one out.
+Any support, please [contact me!](https://kaitlyn.codes)
 
-Webserver has sufficient documentation to get a simple Vortexi instance up
-
-If you want to recreate the freedom of 2016+ (get it), you will have to do much more.
-
-yours truly,
-kuromi
-26/05/25 (D/M/Y)
+Good luck, feel free to rehost this!
