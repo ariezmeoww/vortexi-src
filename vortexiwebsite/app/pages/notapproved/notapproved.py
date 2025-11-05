@@ -79,7 +79,9 @@ def not_approved_post():
         UserObj.accountstatus = 1
         db.session.commit()
         return redirect("/")
-    
+    if LatestUserBanObj.ban_type != BanType.Warning:
+        flash("u can log back in now thank u", "error")
+        return redirect("/not-approved")
     LatestUserBanObj.acknowledged = True
     UserObj.accountstatus = 1
     db.session.commit()
