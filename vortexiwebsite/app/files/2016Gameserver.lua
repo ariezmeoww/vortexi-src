@@ -68,7 +68,7 @@ if BaseURL~=nil then
 end
 
 pcall(function() 
-    game:GetService("NetworkServer"):SetIsPlayerAuthenticationRequired(true) 
+    game:GetService("NetworkServer"):SetIsPlayerAuthenticationRequired(false) 
 end)
 settings().Diagnostics.LuaRamLimit = 0
 
