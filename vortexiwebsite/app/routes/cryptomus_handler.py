@@ -3,7 +3,7 @@ import hashlib
 import requests
 import json
 import string
-import random
+import secrets
 import logging
 import redis_lock
 
@@ -149,7 +149,7 @@ def GenerateInvoiceID():
         :returns: str
     """
     
-    NewInvoiceID = ''.join(random.choices(string.ascii_uppercase + string.digits, k=64))
+    NewInvoiceID = ''.join(secrets.choice(string.ascii_uppercase + string.digits) for _ in range(64))
 
     if CryptomusInvoice.query.filter_by( id = NewInvoiceID ).first() is not None:
         # This will never happen, but we are handling money here so we need to be sure
@@ -220,7 +220,7 @@ def InvoiceStatusCallback( invoice_id : str ):
     def GenerateCode():
         Code = ""
         for i in range(0, 5):
-            Chunk = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
+            Chunk = ''.join(secrets.choice(string.ascii_uppercase + string.digits) for _ in range(5))
             Code += Chunk
             if i != 4:
                 Code += "-"
