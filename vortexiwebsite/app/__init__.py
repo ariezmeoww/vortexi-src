@@ -5,7 +5,7 @@ import os
 import hashlib
 import traceback
 import string
-import random
+import secrets
 import re
 import logging
 from config import Config
@@ -228,7 +228,7 @@ def create_app(config_class=Config):
                     resp.set_cookie(".ROBLOSECURITY", "", expires=0)
                     return resp
             if request.cookies.get(key="t", default=None, type=str) is None:
-                NewToken = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(128))
+                NewToken = ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(128))
                 response.set_cookie("t", NewToken, expires=datetime.utcnow() + timedelta(days=365), domain=f".{config_class.BaseDomain}")
         if "not-approved-viewer" in session:
             UserObj : User = auth.GetCurrentUser()
