@@ -5,6 +5,7 @@ import time
 from discord import app_commands
 from config import Config
 config = Config()
+nowidthspace = "\u200b" # https://unicode-explorer.com/c/200B for more info on this character
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
 def FormatBackendUrl(Endpoint: str) -> str:
@@ -28,7 +29,7 @@ async def GetRequestSession() -> requests.Session:
 async def BuildUserEmbed( UserObject: dict ) -> discord.Embed:
     UserEmbed = discord.Embed()
     UserEmbed.title = UserObject["username"]
-    UserEmbed.description = UserObject["description"]
+    UserEmbed.description = nowidthspace.join(UserObject["description"]) + nowidthspace
     UserEmbed.color = discord.Color.green()
     UserEmbed.url = f"https://www.vortexi.cc/users/{UserObject['id']}/profile"
     UserEmbed.set_thumbnail(url=f"https://www.vortexi.cc/Thumbs/Head.ashx?x=100&y=100&userId={UserObject['id']}")
@@ -42,7 +43,7 @@ async def BuildUserEmbed( UserObject: dict ) -> discord.Embed:
 async def BuildItemEmbed( ItemObject: dict ) -> discord.Embed:
     ItemEmbed = discord.Embed()
     ItemEmbed.title = ItemObject["name"]
-    ItemEmbed.description = ItemObject["description"]
+    ItemEmbed.description = nowidthspace.join(ItemObject["description"]) + nowidthspace
     ItemEmbed.color = discord.Color.green()
     ItemEmbed.url = f"https://www.vortexi.cc/catalog/{ItemObject['id']}/"
     ItemEmbed.set_thumbnail(url=f"https://www.vortexi.cc/Thumbs/Asset.ashx?x=180&y=180&assetId={ItemObject['id']}")
